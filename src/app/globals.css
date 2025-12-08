@@ -3,10 +3,25 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #d946ef;
+  --primary-hover: #c026d3;
+  --selection: rgba(216, 70, 239, 0.3);
+  --success: oklch(97.042% 0.01821 150.86);
+  --success-foreground: oklch(62.7% 0.194 149.214);
+  --error: oklch(94.137% 0.02976 12.379);
+  --error-foreground: oklch(58.581% 0.22205 17.569);
+  --danger: oklch(93.208% 0.04613 65.056);
+  --danger-foreground: oklch(66.6% 0.179 58.318);
 
   @media (prefers-color-scheme: dark) {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --success: oklch(21.574% 0.02591 149.063);
+    --success-foreground: oklch(72.276% 0.19199 149.6);
+    --error: oklch(21.165% 0.07487 12.323);
+    --error-foreground: oklch(72.362% 0.19094 14.318);
+    --danger: oklch(22.924% 0.0505 70.724);
+    --danger-foreground: oklch(82.8% 0.189 84.429);
   }
 }
 
@@ -17,8 +32,109 @@
   --font-mono: var(--font-geist-mono);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: system-ui, Inter, Helvetica, Roboto, sans-serif;
+@layer base {
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: system-ui, Inter, Helvetica, Roboto, sans-serif;
+    padding: 1rem;
+  }
+
+  ::selection {
+    background-color: var(--selection);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--primary);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+  }
+
+  h6 {
+    font-size: 1rem;
+  }
+
+  a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  button,
+  input[type='submit'] {
+    background-color: var(--primary);
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+
+    transition: scale 0.2s;
+  }
+
+  button:hover,
+  input[type='submit']:hover {
+    background-color: var(--primary-hover);
+  }
+
+  button:active,
+  input[type='submit']:active {
+    scale: 0.95;
+  }
+
+  button:disabled,
+  input[type='submit']:disabled {
+    background-color: #64748b;
+    color: #fff;
+    /* cursor: not-allowed; */
+    cursor: default;
+    user-select: none;
+  }
+
+  input {
+    color: var(--foreground);
+    border: 1px solid var(--foreground);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
+
+  select {
+    color: #000;
+  }
 }

@@ -1,8 +1,17 @@
+import createMDX from '@next/mdx'
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Support MDX files as pages
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+
+  // Other Next.js config options can go here
   reactCompiler: true,
 }
 
-export default nextConfig
+const withMDX = createMDX({
+  // Add markdown plugins here, as desired
+  extension: /\.(md|mdx)$/, // Compile both .md and .mdx files
+})
+
+export default withMDX(nextConfig)
