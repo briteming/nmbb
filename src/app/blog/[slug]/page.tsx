@@ -9,6 +9,7 @@ export default async function Page({
   return <Post />
 }
 
+// Generate static params for known blog posts
 export function generateStaticParams() {
   return [{ slug: 'welcome' }, { slug: 'about' }]
 }
