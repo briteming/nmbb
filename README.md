@@ -8,3 +8,7 @@ This is a boilerplate for a blog built with Next.js and MDX. It provides a solid
 - Install dependencies using `npm install`
 - Run the development server using `npm run dev`
 - Open [http://localhost:3000](http://localhost:3000) to view the blog in your browser.
+
+## License
+
+- [MIT](LICENSE.md)
