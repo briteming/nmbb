@@ -2,6 +2,25 @@
 
 This is a boilerplate for a blog built with Next.js and MDX. It provides a solid foundation for creating a blog with support for MDX files, allowing you to write blog posts using Markdown and JSX.
 
+## How to add new blog posts
+
+1. Create a new `.mdx` file in the `src/content` directory.
+2. Add slug and title metadata in `/src/lib/posts.ts`.
+   1. Example:
+
+   ```ts
+   // src/content/my-new-post.mdx
+   {
+     slug: 'my-new-post', // Make sure this matches the filename
+     title: 'My New Post', // Any title you want
+   }
+   ```
+
+3. Write your blog post content in the `.mdx` file using Markdown and JSX as needed. You can even import and use React components within your MDX files.
+4. Start your development server to see the new post in action.
+
+> Tip: The homepage automatically lists all blog posts based on the metadata provided in `/src/lib/posts.ts`
+
 ## Prerequisites
 
 - Node.js version 22.14.0 (use nvm for easy version management: `nvm install 22.14.0 && nvm use 22.14.0`)
