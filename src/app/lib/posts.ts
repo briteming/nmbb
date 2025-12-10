@@ -2,7 +2,7 @@ export const posts = [
   { slug: 'about', title: 'About Post' },
   { slug: 'welcome', title: 'Welcome Post' },
   // TIP: Add your new posts here
-]
+] as const
 
 export function getAllPosts() {
   return posts
