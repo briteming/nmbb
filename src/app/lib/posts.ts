@@ -1,4 +1,5 @@
 export const posts = [
+  { slug: 'ce', title: '稀奇古怪的中国经济' },
   { slug: 'test', title: '测试' },
   { slug: 'about', title: 'About Post' },
   { slug: 'welcome', title: 'Welcome Post' },
