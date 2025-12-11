@@ -1,4 +1,5 @@
 export const posts = [
+  { slug: 'test', title: '测试' },
   { slug: 'about', title: 'About Post' },
   { slug: 'welcome', title: 'Welcome Post' },
   // TIP: Add your new posts here
